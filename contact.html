@@ -6,22 +6,55 @@
     <title>Portfolio | Contact</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Modern Form Layout Styling */
-        .contact-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
-        .contact-wrapper p {
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .info-item p, .info-item a {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-item a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .form-group {
@@ -33,30 +66,28 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--accent-glow);
+            color: var(--text-main);
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
-        /* Interactive Inputs with Glassmorphic feel */
         .form-group input, 
         .form-group textarea {
             width: 100%;
             padding: 0.75rem 1rem;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             color: var(--text-main);
             font-size: 1rem;
-            transition: all 0.3s ease;
             outline: none;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus, 
         .form-group textarea:focus {
-            border-color: var(--accent-glow);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
-            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--accent-blue);
+            background: #ffffff;
         }
 
         .form-group textarea {
@@ -64,13 +95,15 @@
             min-height: 120px;
         }
 
-        .submit-btn-wrapper {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
         .submit-btn {
             width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -78,7 +111,7 @@
 
     <header>
         <nav>
-            <div class="logo">CSE<span>.AI</span></div>
+            <div class="logo">Ramlal<span>.Dev</span></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Education</a></li>
@@ -89,43 +122,55 @@
     </header>
 
     <main class="container">
-        <h2 class="page-title">Get In <span>Touch</span></h2>
+        <h2 class="page-title">Connect <span>With Me</span></h2>
 
-        <div class="contact-wrapper">
-            <p>If you would like to collaborate on an automation system, discuss AI/ML engineering, or connect regarding opportunities, feel free to send a message below.</p>
+        <div class="contact-layout">
             
-            <form action="#" method="POST">
+            <!-- Professional Contact Information Column -->
+            <div class="contact-info">
+                <h3>Let's collaborate</h3>
+                <p>Feel free to reach out via email, phone, or connect through LinkedIn. I look forward to exploring technical opportunities and system development projects with you.</p>
                 
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <div class="info-details">
+                    <div class="info-item">
+                        <h4>Email Address</h4>
+                        <p><a href="mailto:ramlaldaravath2007@gmail.com">ramlaldaravath2007@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Phone Number</h4>
+                        <p>+91 6300325443</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/ramlal-daravath-a242403a2/" target="_blank">Connect on LinkedIn &rarr;</a></p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Opportunity" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
-                </div>
-
-                <div class="submit-btn-wrapper">
+            <!-- Message Form Column -->
+            <div class="contact-wrapper">
+                <form action="https://formspree.io/f/your_formspree_id_here" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
                     <button type="submit" class="btn submit-btn">Send Message</button>
-                </div>
+                </form>
+            </div>
 
-            </form>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 | Built professionally from scratch</p>
+        <p>&copy; 2026 Daravath Ramlal | All Rights Reserved</p>
     </footer>
 
 </body>
