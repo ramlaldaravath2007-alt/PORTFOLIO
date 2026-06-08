@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Interactive Project Grid Layout */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5);
+        }
+
+        .project-header h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .project-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-glow);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Tech Badges inside the card */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags span {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-glow);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-footer {
+            margin-top: auto;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .project-link:hover {
+            color: var(--accent-glow);
+        }
+
+        .project-link span {
+            margin-left: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover .project-link span {
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">CSE<span>.AI</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Education</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">Featured <span>Projects</span></h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-status">Core Solution</span>
+                    <h3>ITJ-UE</h3>
+                </div>
+                <div class="project-body">
+                    <p><strong>Intelligent Timetable Generator for JNTUH-University Examinations.</strong> An automation platform designed to clean, extract, and convert chaotic PDF or Word examination timetables directly into structured, optimized Excel spreadsheets. Greatly reduces manual overhead and eliminates administrative errors during scheduling.</p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>Data Extraction</span>
+                        <span>Automation</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="#" class="project-link">View Documentation <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-status">Workflow System</span>
+                    <h3>Exam Duty Allocation</h3>
+                </div>
+                <div class="project-body">
+                    <p>A smart, computerized system built to manage and assign exam duties to college faculty. It algorithmically allocates schedules based on availability rules, department metrics, and load balancing constraints, optimizing a previously tedious institutional process.</p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>Database Design</span>
+                        <span>Logic Optimization</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="#" class="project-link">View Architecture <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-status">Financial Tool</span>
+                    <h3>Faculty Salary Management</h3>
+                </div>
+                <div class="project-body">
+                    <p>A comprehensive institutional database solution engineered to process faculty accounts. It calculates complex exam-duty remuneration details, handles customized zero travel allowance rules, manages tax deduction metrics, and generates precise, itemized bills for verification.</p>
+                    <div class="tech-tags">
+                        <span>SQL</span>
+                        <span>Database Systems</span>
+                        <span>Data Integrity</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="#" class="project-link">View Database Schema <span>&rarr;</span></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | Built professionally from scratch</p>
+    </footer>
+
+</body>
+</html>

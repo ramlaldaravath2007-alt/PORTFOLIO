@@ -1,0 +1,139 @@
+/* Modern Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --bg-dark: #0f172a;       /* Deep slate blue/black */
+    --bg-card: #1e293b;       /* Glassmorphism base card color */
+    --accent-glow: #38bdf8;   /* AI/ML Bright Cyan */
+    --text-main: #f8fafc;     /* Clean off-white */
+    --text-muted: #94a3b8;    /* Muted gray for descriptions */
+    --nav-height: 70px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Professional Modern Navigation */
+header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-glow);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-glow);
+}
+
+/* Subtle underline animation for active/hover links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-glow);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* Common Layout Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: calc(var(--nav-height) + 4rem) auto 4rem auto;
+    min-height: 80vh;
+}
+
+h2.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2.page-title span {
+    color: var(--accent-glow);
+}
+
+/* Interactive Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    background: transparent;
+    color: var(--accent-glow);
+    border: 2px solid var(--accent-glow);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-glow);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
